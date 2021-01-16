@@ -31,9 +31,13 @@ To load the plugin into the game, Paste the `.tq` Plugin File into the `Plugins`
 ### Structuring the Plugin
 
 For creating a new plugin, You need to use the method `Plugin.register`.
+
 `Plugin.register` takes a hash as its argument. The hash contains a key value pair of `:NAME`, `:VERSION`, and `:CREDITS`.
+
 `:NAME` contains the plugin's Name. `Type: String`
+
 `:VERSION` contains the Plugin's Version.  `Type: String`
+
 `:CREDITS` contains a list of people to credit. `Type: String Array`
 
 **Examples**
