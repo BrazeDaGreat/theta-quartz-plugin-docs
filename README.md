@@ -22,7 +22,7 @@ end
 
 ```
 ## Setup
-Firstly, Download The Plugin Compiler from here(add hyperlink). After downloading the Compiler, Head into the folder called `Scripts`. You will write all the code there.
+Firstly, Download The Plugin Compiler from here(Soon(TM)). After downloading the Compiler, Head into the folder called `Scripts`. You will write all the code there.
 The extension used for Plugins is `.rb`, And they are written in the form of RGSS. You can create multiple files as per your need, And after you're done, Run `Compiler.exe` to compile the plugins into one Single Plugin File with the extension `.tq` which is usable in the game.
 To load the plugin into the game, Paste the `.tq` Plugin File into the `Plugins` Folder within the Game's Main Folder.
 
@@ -109,10 +109,15 @@ end
 
 | Method | Information | Example |
 | --- | --- | --- |
-| getTrainers | Returns a hash containing all of the Trainers. | --- |
-| battle(trainer) | Starts a new Trainer Battle. | `TQTrainers.battle("Youngster_Joey")` |
-| battle_end(trainer,win?) | This function is called after a battle ends. | `TQTrainers.battle_end("Youngster_Joey",true)` |
+| newTrainer(hash) | Creates a new Trainer with defined `hash` | - |
 | compile(hash) | Compiles the Trainer's data defined in `hash`, Is called after adding a new trainer into `data` hash | `TQTrainers.compile(trainers)` |
+
+#### `TQCoronation` Methods
+| Method | Information | Example |
+| --- | --- | --- |
+| getPoints | Returns player's points as integer. | `points = TQCoronation.getPoints` |
+| addPoints(x) | Adds `x` amounts of points into Player's ranking. | `TQCoronation.addPoints(3)` |
+| removePoints(x) | Removes `x` amounts of points into Player's ranking. | `TQCoronation.removePoints(6)` |
 
 Other than module specific methods, there are also some **Global Functions**:
 
@@ -120,4 +125,4 @@ Other than module specific methods, there are also some **Global Functions**:
 | --- | --- |--- |
 | tqGetLevel | Returns an integer (level) based upon Player's Party. Open World Level.| `tqGetLevel` |
 | tqTextInput(title,minimum_characters,maximum_characters) | Takes a Keyboard Input from Player and returns it. | `player_name = tqTextInput("What is your Name?")` |
-| tqJsonStringify(string) | Converts a JSON String `string` into Ruby Hash. | `tqJsonStringify( "any JSON String" )` |
+| tqJsonStringify(hash) | Converts Ruby Hash `hash` into JSON string. | `tqJsonStringify( rubyhash )` |
